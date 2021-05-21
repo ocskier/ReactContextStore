@@ -5,7 +5,7 @@ const useDebounceLocation = (value) => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setDebouncedLocation(value);
-    }, 3000);
+    }, 2000);
     return () => {
       clearTimeout(timeoutId);
     };
