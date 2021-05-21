@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/ReactContextStore/static/css/main.616ef4af.chunk.css",
+    "main.js": "/ReactContextStore/static/js/main.a32e1d4e.chunk.js",
+    "main.js.map": "/ReactContextStore/static/js/main.a32e1d4e.chunk.js.map",
+    "runtime-main.js": "/ReactContextStore/static/js/runtime-main.0199514f.js",
+    "runtime-main.js.map": "/ReactContextStore/static/js/runtime-main.0199514f.js.map",
+    "static/css/2.bc8fb8fc.chunk.css": "/ReactContextStore/static/css/2.bc8fb8fc.chunk.css",
+    "static/js/2.6135fe09.chunk.js": "/ReactContextStore/static/js/2.6135fe09.chunk.js",
+    "static/js/2.6135fe09.chunk.js.map": "/ReactContextStore/static/js/2.6135fe09.chunk.js.map",
+    "index.html": "/ReactContextStore/index.html",
+    "static/css/2.bc8fb8fc.chunk.css.map": "/ReactContextStore/static/css/2.bc8fb8fc.chunk.css.map",
+    "static/css/main.616ef4af.chunk.css.map": "/ReactContextStore/static/css/main.616ef4af.chunk.css.map",
+    "static/js/2.6135fe09.chunk.js.LICENSE.txt": "/ReactContextStore/static/js/2.6135fe09.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0199514f.js",
+    "static/css/2.bc8fb8fc.chunk.css",
+    "static/js/2.6135fe09.chunk.js",
+    "static/css/main.616ef4af.chunk.css",
+    "static/js/main.a32e1d4e.chunk.js"
+  ]
+}
