@@ -14,8 +14,8 @@ export const Map = ({ lat, lon }) => {
         <M
           style="mapbox://styles/mapbox/streets-v9"
           containerStyle={{
-            height: '50vh',
-            width: '50vw',
+            height: '90vh',
+            width: '90vw',
             border: '1px solid black',
             marginTop: '1rem',
           }}
