@@ -25,7 +25,7 @@ const Form = () => {
         <input
           className="input"
           onChange={(e) => setState({ name, location: e.target.value })}
-          value={location}
+          value={location.city}
         />
       </div>
     </div>

@@ -20,7 +20,10 @@ function GlobalProvider({ children }) {
         const userCity = userCityArr
           .join('')
           .substring(0, userCityArr.join('').length - 1);
-        setState({ ...state, location: userCity });
+        setState({
+          ...state,
+          location: { city: userCity, coords: { lat, lon } },
+        });
       },
       () => {
         console.log("Couldn't get position!");

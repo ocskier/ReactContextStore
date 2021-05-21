@@ -1,10 +1,10 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import Name from "./NameComponent";
-import Location from "./LocationComponent";
-import UserForm from "./UserForm";
-import { GlobalProvider } from "./utils/GlobalState";
-import "./styles.css";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Name from './Name';
+import Location from './Location';
+import UserForm from './UserForm';
+import { GlobalProvider } from './utils/GlobalState';
+import './styles.css';
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
           <UserForm />
 
           <h2 className="is-size-4">
-            Display User Info Here{" "}
+            Display User Info Here{' '}
             <span role="img" aria-label="point-down-label">
               👇
             </span>
@@ -36,5 +36,5 @@ function App() {
 }
 
 // Wrap parent component with context provider
-const rootElement = document.getElementById("root");
+const rootElement = document.getElementById('root');
 ReactDOM.render(<App />, rootElement);
