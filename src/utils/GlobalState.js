@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const GlobalContext = React.createContext(null);
 
 function GlobalProvider({ children }) {
-  const [state, setState] = useState({ name: '', location: '' });
+  const [state, setState] = useState({ name: '', location: {} });
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       async ({ coords: { latitude: lat, longitude: lon } }) => {
@@ -22,7 +22,7 @@ function GlobalProvider({ children }) {
           .substring(0, userCityArr.join('').length - 1);
         setState({
           ...state,
-          location: { city: userCity, coords: { lat, lon } },
+          location: { ...location, city: userCity, coords: { lat, lon } },
         });
       },
       () => {

@@ -24,7 +24,9 @@ const Form = () => {
         <label className="label">Update Location: </label>
         <input
           className="input"
-          onChange={(e) => setState({ name, location: e.target.value })}
+          onChange={(e) =>
+            setState({ name, location: { ...location, city: e.target.value } })
+          }
           value={location.city}
         />
       </div>

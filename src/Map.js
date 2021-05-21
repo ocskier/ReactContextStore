@@ -16,6 +16,8 @@ export const Map = ({ lat, lon }) => {
           containerStyle={{
             height: '50vh',
             width: '50vw',
+            border: '1px solid black',
+            marginTop: '1rem',
           }}
           center={[lon, lat]}
           zoom={[9]}
