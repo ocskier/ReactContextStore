@@ -1,4 +1,5 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
+import { useDebounceLocation } from './utils/debounceLocation';
 import { GlobalContext } from './utils/GlobalState';
 
 const Form = () => {
@@ -6,6 +7,27 @@ const Form = () => {
     state: { name, location },
     setState,
   } = useContext(GlobalContext);
+  const debouncedLocation = useDebounceLocation(location.city);
+  useEffect(async () => {
+    if (debouncedLocation) {
+      console.log('Setting new location coords');
+      const response = await fetch(
+        `https://maps.googleapis.com/maps/api/geocode/json?address=${debouncedLocation}&key=AIzaSyD_tgpw_aI3elBJ3FQzH5kqi00Qep6jXxM`
+      );
+      const data = await response.json();
+      console.log(data);
+      setState({
+        name,
+        location: {
+          ...location,
+          coords: {
+            lat: data.results[0].geometry.location.lat,
+            lon: data.results[0].geometry.location.lng,
+          },
+        },
+      });
+    }
+  }, [debouncedLocation]);
 
   return (
     <div className="user-form">
