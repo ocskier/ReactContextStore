@@ -1,9 +1,40 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useReducer, useState } from 'react';
+import actions from './actions';
 
 const GlobalContext = React.createContext(null);
 
+function reducer(state, { type, payload }) {
+  switch (type) {
+    case 'UPDATE_LOCATION':
+      return { ...state, location: { ...payload } };
+    case 'UPDATE_COORDS':
+      return {
+        ...state,
+        location: {
+          ...state.location,
+          coords: { ...payload.coords },
+        },
+      };
+    case 'UPDATE_CITY':
+      return {
+        ...state,
+        location: {
+          ...state.location,
+          ...payload,
+        },
+      };
+    case 'UPDATE_NAME':
+      return {
+        ...state,
+        ...payload,
+      };
+    default:
+      throw new Error();
+  }
+}
+
 function GlobalProvider({ children }) {
-  const [state, setState] = useState({ name: '', location: {} });
+  const [state, dispatch] = useReducer(reducer, { name: '', location: {} });
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       async ({ coords: { latitude: lat, longitude: lon } }) => {
@@ -20,10 +51,7 @@ function GlobalProvider({ children }) {
         const userCity = userCityArr
           .join('')
           .substring(0, userCityArr.join('').length - 1);
-        setState({
-          ...state,
-          location: { ...location, city: userCity, coords: { lat, lon } },
-        });
+        dispatch(actions.updateLocation(userCity, { lat, lon }));
       },
       () => {
         console.log("Couldn't get position!");
@@ -31,7 +59,7 @@ function GlobalProvider({ children }) {
     );
   }, []);
   return (
-    <GlobalContext.Provider value={{ state, setState }}>
+    <GlobalContext.Provider value={{ state, dispatch }}>
       {children}
     </GlobalContext.Provider>
   );

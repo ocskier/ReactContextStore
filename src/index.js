@@ -11,21 +11,21 @@ function App() {
     <GlobalProvider>
       <div className="App">
         <h2 className="is-size-4">
-          We'll use the React Context API to pass and receive data in any
-          component.
+          We'll use the React Context API with useReducer to create a Global
+          Store with dispatch actions to pass and receive data in any component.
         </h2>
         <div className="container">
           <UserForm />
 
           <h2 className="is-size-4">
-            Display User Info Here{' '}
+            User Info Here{' '}
             <span role="img" aria-label="point-down-label">
               👇
             </span>
           </h2>
           <p>
-            These two children components will receive data. These could be
-            nested components.
+            These two children components and their nested components can
+            receive data.
           </p>
           <Name />
           <Location />
