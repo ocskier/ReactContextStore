@@ -1,11 +1,30 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
+import { useDebounceLocation } from './utils/debounceLocation';
 import { GlobalContext } from './utils/GlobalState';
+import actions from './utils/actions';
 
 const Form = () => {
   const {
     state: { name, location },
-    setState,
+    dispatch,
   } = useContext(GlobalContext);
+  const debouncedLocation = useDebounceLocation(location.city);
+  useEffect(async () => {
+    if (debouncedLocation) {
+      console.log('Setting new location coords');
+      const response = await fetch(
+        `https://maps.googleapis.com/maps/api/geocode/json?address=${debouncedLocation}&key=AIzaSyD_tgpw_aI3elBJ3FQzH5kqi00Qep6jXxM`
+      );
+      const data = await response.json();
+      console.log(data);
+      dispatch(
+        actions.updateCoords({
+          lat: data.results[0].geometry.location.lat,
+          lon: data.results[0].geometry.location.lng,
+        })
+      );
+    }
+  }, [debouncedLocation]);
 
   return (
     <div className="user-form">
@@ -14,7 +33,7 @@ const Form = () => {
         <label className="label">Update Name: </label>
         <input
           className="input"
-          onChange={(e) => setState({ location, name: e.target.value })}
+          onChange={(e) => dispatch(actions.updateName(e.target.value))}
           value={name}
         />
       </div>
@@ -24,8 +43,8 @@ const Form = () => {
         <label className="label">Update Location: </label>
         <input
           className="input"
-          onChange={(e) => setState({ name, location: e.target.value })}
-          value={location}
+          onChange={(e) => dispatch(actions.updateCity(e.target.value))}
+          value={location.city}
         />
       </div>
     </div>
