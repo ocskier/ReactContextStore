@@ -12,7 +12,7 @@ function reducer(state, { type, payload }) {
         ...state,
         location: {
           ...state.location,
-          coords: { ...payload.coords },
+          ...payload,
         },
       };
     case 'UPDATE_CITY':
