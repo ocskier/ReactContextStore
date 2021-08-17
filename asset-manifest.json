@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/ReactContextStore/static/css/main.e3067bbb.chunk.css",
-    "main.js": "/ReactContextStore/static/js/main.7460f973.chunk.js",
-    "main.js.map": "/ReactContextStore/static/js/main.7460f973.chunk.js.map",
-    "runtime-main.js": "/ReactContextStore/static/js/runtime-main.0199514f.js",
-    "runtime-main.js.map": "/ReactContextStore/static/js/runtime-main.0199514f.js.map",
-    "static/css/2.bc8fb8fc.chunk.css": "/ReactContextStore/static/css/2.bc8fb8fc.chunk.css",
-    "static/js/2.d1f3cdb9.chunk.js": "/ReactContextStore/static/js/2.d1f3cdb9.chunk.js",
-    "static/js/2.d1f3cdb9.chunk.js.map": "/ReactContextStore/static/js/2.d1f3cdb9.chunk.js.map",
-    "index.html": "/ReactContextStore/index.html",
-    "static/css/2.bc8fb8fc.chunk.css.map": "/ReactContextStore/static/css/2.bc8fb8fc.chunk.css.map",
-    "static/css/main.e3067bbb.chunk.css.map": "/ReactContextStore/static/css/main.e3067bbb.chunk.css.map",
-    "static/js/2.d1f3cdb9.chunk.js.LICENSE.txt": "/ReactContextStore/static/js/2.d1f3cdb9.chunk.js.LICENSE.txt"
+    "main.css": "/react-context-store/static/css/main.e3067bbb.chunk.css",
+    "main.js": "/react-context-store/static/js/main.7460f973.chunk.js",
+    "main.js.map": "/react-context-store/static/js/main.7460f973.chunk.js.map",
+    "runtime-main.js": "/react-context-store/static/js/runtime-main.4008d6f7.js",
+    "runtime-main.js.map": "/react-context-store/static/js/runtime-main.4008d6f7.js.map",
+    "static/css/2.bc8fb8fc.chunk.css": "/react-context-store/static/css/2.bc8fb8fc.chunk.css",
+    "static/js/2.d1f3cdb9.chunk.js": "/react-context-store/static/js/2.d1f3cdb9.chunk.js",
+    "static/js/2.d1f3cdb9.chunk.js.map": "/react-context-store/static/js/2.d1f3cdb9.chunk.js.map",
+    "index.html": "/react-context-store/index.html",
+    "static/css/2.bc8fb8fc.chunk.css.map": "/react-context-store/static/css/2.bc8fb8fc.chunk.css.map",
+    "static/css/main.e3067bbb.chunk.css.map": "/react-context-store/static/css/main.e3067bbb.chunk.css.map",
+    "static/js/2.d1f3cdb9.chunk.js.LICENSE.txt": "/react-context-store/static/js/2.d1f3cdb9.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.0199514f.js",
+    "static/js/runtime-main.4008d6f7.js",
     "static/css/2.bc8fb8fc.chunk.css",
     "static/js/2.d1f3cdb9.chunk.js",
     "static/css/main.e3067bbb.chunk.css",
