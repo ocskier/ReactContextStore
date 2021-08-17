@@ -4,6 +4,24 @@
   padding-left: 2rem;
   padding-right: 2rem;
   padding-bottom: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.container {
+  margin: 1rem;
+}
+
+.left-container {
+  max-width: 27rem;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+}
+
+.form-container {
+  flex-grow: 0;
 }
 
 .input-item {
@@ -22,6 +40,6 @@
   margin-bottom: 2rem;
 }
 
-.container {
-  margin: 1rem;
+.map {
+  min-width: 27rem;
 }

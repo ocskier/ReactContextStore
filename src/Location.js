@@ -1,5 +1,4 @@
-import React, { useContext } from 'react';
-import { Map } from './Map';
+import { useContext } from 'react';
 import { GlobalContext } from './utils/GlobalState';
 // This component displays location from context
 
@@ -12,7 +11,6 @@ const Location = () => {
       {/* Display user's location from Context */}
       <h2 className="is-size-4">
         <strong>Location</strong>: {location.city}
-        <Map {...location.coords} />
       </h2>
     </div>
   );

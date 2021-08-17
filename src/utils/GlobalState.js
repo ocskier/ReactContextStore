@@ -34,7 +34,10 @@ function reducer(state, { type, payload }) {
 }
 
 function GlobalProvider({ children }) {
-  const [state, dispatch] = useReducer(reducer, { name: '', location: {} });
+  const [state, dispatch] = useReducer(reducer, {
+    name: '',
+    location: { city: '' },
+  });
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       async ({ coords: { latitude: lat, longitude: lon } }) => {
@@ -54,7 +57,13 @@ function GlobalProvider({ children }) {
         dispatch(actions.updateLocation(userCity, { lat, lon }));
       },
       () => {
-        console.log("Couldn't get position!");
+        console.log("Couldn't get position! Using Default..");
+        dispatch(
+          actions.updateLocation('Raleigh, NC', {
+            lat: 35.787743,
+            lon: -78.644257,
+          })
+        );
       }
     );
   }, []);

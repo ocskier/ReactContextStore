@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { useDebounceLocation } from './utils/debounceLocation';
 import { GlobalContext } from './utils/GlobalState';
 import actions from './utils/actions';
