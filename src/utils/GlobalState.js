@@ -1,7 +1,9 @@
-import React, { useEffect, useReducer, useState } from 'react';
+import { createContext, useContext, useEffect, useReducer } from 'react';
 import actions from './actions';
 
-const GlobalContext = React.createContext(null);
+const GlobalContext = createContext(null);
+
+const useGlobalContext = () => useContext(GlobalContext);
 
 function reducer(state, { type, payload }) {
   switch (type) {
@@ -74,4 +76,4 @@ function GlobalProvider({ children }) {
   );
 }
 
-export { GlobalProvider, GlobalContext };
+export { GlobalProvider, useGlobalContext };

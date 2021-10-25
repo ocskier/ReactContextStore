@@ -1,11 +1,10 @@
-import { useContext } from 'react';
-import { GlobalContext } from './utils/GlobalState';
+import { useGlobalContext } from './utils/GlobalState';
 // This component displays location from context
 
 const Location = () => {
   const {
     state: { location },
-  } = useContext(GlobalContext);
+  } = useGlobalContext();
   return (
     <div>
       {/* Display user's location from Context */}

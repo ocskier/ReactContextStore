@@ -1,13 +1,13 @@
-import { useContext, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDebounceLocation } from './utils/debounceLocation';
-import { GlobalContext } from './utils/GlobalState';
+import { useGlobalContext } from './utils/GlobalState';
 import actions from './utils/actions';
 
 const Form = () => {
   const {
     state: { name, location },
     dispatch,
-  } = useContext(GlobalContext);
+  } = useGlobalContext();
   const debouncedLocation = useDebounceLocation(location.city);
   useEffect(async () => {
     if (debouncedLocation) {

@@ -1,6 +1,5 @@
-import { useContext } from 'react';
 import ReactMapboxGl, { Layer, Feature, LngLat } from 'react-mapbox-gl';
-import { GlobalContext } from './utils/GlobalState';
+import { useGlobalContext } from './utils/GlobalState';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 const M = ReactMapboxGl({
@@ -11,7 +10,7 @@ const M = ReactMapboxGl({
 export const Map = () => {
   const {
     state: { location },
-  } = useContext(GlobalContext);
+  } = useGlobalContext();
   const lat = location.coords?.lat;
   const lon = location.coords?.lon;
   return (

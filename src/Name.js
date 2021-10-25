@@ -1,10 +1,10 @@
 import { useContext } from 'react';
-import { GlobalContext } from './utils/GlobalState';
+import { useGlobalContext } from './utils/GlobalState';
 // This component displays name from Context
 const RandomComponent = () => {
   const {
     state: { name },
-  } = useContext(GlobalContext);
+  } = useGlobalContext();
 
   return (
     <div style={{ marginTop: '30px' }}>
